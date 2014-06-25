@@ -128,37 +128,39 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# Node som byggverktøy
+# Node as a build-tool
 or:
 ### How I learned to stop worrying and love the event-driven, non-blocking I/O build system  
 
 ---
 layout: false
 
-# Kort om meg
+# Short bio
 
-* Navn: Mats Grønlid
-* Tittel: Senior Konsulent i Capgemini
-* Nåværende oppdrag: Digitalisering av eksamen for handelshøyskolen BI
+* Name: Mats Grønlid
+* Title: Senior Consultant at Capgemini
+* Current deployment: Digitizing the exam-process for BI Norwegian Business School.
 * [http://github.com/groenlid](http://github.com/groenlid)
 
 ---
 
 # Agenda
 
-* Node som byggverktøy
+--
+
+* Node as a build-tool
 
 --
 
-* Kort intro til noen ulike verktøy
+* Short intro to some different tools
 
 --
 
-* Hvordan bruke verktøyene for å øke utviklings-produktiviteten
+* How to use those tools efficiently to speed your development-cycle.
 
 --
 
-* Minimere antall feil i javascript-applikasjonen så tidlig som mulig
+* How to minimize the number of bugs in your code as early as possible.
 
 --
 
@@ -167,6 +169,12 @@ layout: false
 ---
 
 # Why do we need it?
+
+--
+
+* Performance - Network slow
+* Faster development
+* Minimize number of bugs in your code as early as possible.
 
 ---
 
@@ -206,9 +214,57 @@ class: center, middle
 
 ---
 
-
+# Close to ideal development
 
 --
+
+### Developer writes some code on his machine
+
+--
+
+* The changed files are validated (jshint/jslint/scsslint/csslint)
+* The changed module/component are concatinated (concat)
+* 
+* Unit-tests are run with phantom (qunit/jasmine/mocha)
+* Live-reload is triggered (if you're into that sort of thing)
+
+--
+
+### Developer checks in code
+
+---
+
+traceur-compiler
+
+http://github.com/google/traceur-compiler
+ES6
+
+```javascript
+class Character {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+```
+```javascript
+var square = (x) => {
+  return x * x;
+};
+
+var square2 = x => x * x;
+
+```
+---
+
+# Test slide 
+
+.left-column[
+  ## asde
+  ## Why ad it?
+]
+
+---
 
 # Introduction
 
