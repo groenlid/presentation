@@ -1,0 +1,108 @@
+Ember 
+-----
+
+Big data
+	- OData
+	- Don't fetch data that hasn't changed twice.
+
+Big users... eh.. userbase
+	- Send as small json files as possible
+		- Gzip
+		- Transform json
+		- Send partial json
+
+Big codebase
+- Make small components
+- Lazy load part of the application-code
+- Browser cache - images, localized-strings, localstorage, websql
+
+Complex views
+- Chrome inspector is your friend (also Ember Inspector)
+	- Cpu profiling
+	- FPS meter + Enable continous page repainting.
+Support for ipad, phones etc
+- Rendering performance
+	- 60 hz = rendering each 16-17ms
+- Render big lists, only render what's in viewport.
+- Ember's using string templates instead of DOM-based (angular).
+	- Server side compiling.
+- Ember Run Loop
+	- One render each loop.
+- Precompile handlebars templates
+- Small devices does not like big data....
+	- OData
+	- Fetch data on demand
+
+- Keep debugging when the application is in production
+	- Raven -> Sentry
+		- Source-maps
+	- NewRelic
+
+https://github.com/marmelab/gremlins.js
+
+Ember pros
+-----
+
+Handlebars restricts you to write testable code... No "expressions"/"logic" in the templates.
+Convention over configuration
+	- Eg naming
+		- PersonController.js
+		- PersonView.js
+		- Person.handlebars
+	- Restricts "the one" developer that always gets "creative" with classnames.
+	- Ember components adhere to the W3C's web components draft.
+	- Ember core team always tries to future proof your application.
+
+Ember polyfills ES5 (and ES6) functionality.
+	- forEach, map, reduce and filter oh my..
+	Ember.RSVP.promise...
+
+Ember's router.
+	#- The best there is...
+		#- Allows nesting n-deep routes while preserving state in each layer.
+		#	- together with {{link-to}}
+	- Url driven approach.
+
+Automatic stubbing of controllers/views/routes if you don't create them.
+
+-----
+
+// Ember
+Router.map(function(){
+   this.route(‘foobar’);
+});
+
+// Link to foobar in handlebars
+{{#link-to 'foobar' model}}linky{{/link}}
+Automatic data-flow.
+route -> controller -> view -> template
+
+------
+
+// Angular
+$routeProvider.when(‘/foobar’, {
+   templateUrl: ‘/templates/foobar.html’,
+   controller: ‘FoobarController’
+});
+
+
+------
+
+Handlebars
+<!-- but this is what we have to do in Ember today -->
+<div {{bind-attr class="foo"}}>{{bar}}</div>
+
+HTMLBars
+<!-- With HTMLBars, we get our ideal syntax! -->
+<div class="{{foo}}">{{bar}}</div>
+
+
+
+Who uses Ember:
+Discourse
+Zendesk
+Yahoo!
+Square
+Travis-ci
+Twitch
+http://emberjs.com/ember-users/

@@ -1,0 +1,115 @@
+# Node as a build-tool
+or:
+### How I learned to stop worrying and love the event-driven, non-blocking I/O build system  
+
+---
+layout: false
+
+# Short bio
+
+* Name: Mats Grønlid
+* Title: Senior Consultant at Capgemini
+* Current deployment: Digitizing the exam-process for BI Norwegian Business School.
+* [http://github.com/groenlid](http://github.com/groenlid)
+
+---
+
+# Agenda
+* Node as a build-tool
+* Short intro to some different tools
+* How to use those tools efficiently to speed your development-cycle.
+* How to minimize the number of bugs in your code as early as possible.
+* How to be a better person (...... if there's time).
+
+---
+
+# Why do we need it? Do we even need a build system..
+
+* If you're making a hello world application.. Then no...
+* Performance - Network slow
+* Faster development
+* Minimize number of bugs in your code as early as possible.
+
+---
+
+# Enter Node
+![Center-aligned image](01-node.png)
+* [http://nodejs.org/](http://nodejs.org/)
+
+---
+
+# Automate all the things
+class: center, middle
+![Center-aligned image](automation.png)
+
+---
+
+# Chose a build system
+
+* make
+* ant
+* rake
+* jake
+* brunch
+* anvil
+* mimosa
+* simplebuild
+* modjs
+* Bud
+* fez
+* grunt
+* gulp
+* brocolli
+* jzbuild
+* train
+* gear.js
+* mimosa
+
+
+--
+
+![Center-aligned image](mind-blown-2.gif)
+
+---
+
+# Close to ideal development
+
+--
+
+### Developer writes some code on his machine
+
+--
+
+* The changed files are validated (jshint/jslint/scsslint/csslint)
+* The changed module/component are concatinated (concat)
+* 
+* Unit-tests are run with phantom (qunit/jasmine/mocha)
+* Live-reload is triggered (if you're into that sort of thing)
+
+--
+
+### Developer checks in code
+
+---
+
+traceur-compiler
+
+http://github.com/google/traceur-compiler
+ES6
+
+```javascript
+class Character {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+```
+```javascript
+var square = (x) => {
+  return x * x;
+};
+
+var square2 = x => x * x;
+
+```
