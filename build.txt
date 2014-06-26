@@ -1,10 +1,8 @@
 # Node as a build-tool
 or:
-### How I learned to stop worrying and love the event-driven, non-blocking I/O build system  
+### How I learned to stop worrying and love the event-driven, non-blocking I/O build system
 
 ---
-layout: false
-
 # Short bio
 
 * Name: Mats Grønlid
@@ -15,20 +13,24 @@ layout: false
 ---
 
 # Agenda
+* Do we even need a build-tool?
 * Node as a build-tool
-* Short intro to some different tools
+* Some different tools
 * How to use those tools efficiently to speed your development-cycle.
 * How to minimize the number of bugs in your code as early as possible.
 * How to be a better person (...... if there's time).
+* How far can you go?
 
 ---
 
-# Why do we need it? Do we even need a build system..
+# Do we even need a build system..??
 
-* If you're making a hello world application.. Then no...
-* Performance - Network slow
-* Faster development
-* Minimize number of bugs in your code as early as possible.
+* If you're doing it more than once... You should automate it..
+* REMOVE: If you're making a hello world application.. Then no...
+* It gives you:
+	* Performance - Network slow
+	* Faster development
+	* Minimize number of bugs in your code as early as possible.
 
 ---
 
@@ -80,6 +82,7 @@ class: center, middle
 
 --
 
+* 
 * The changed files are validated (jshint/jslint/scsslint/csslint)
 * The changed module/component are concatinated (concat)
 * 
