@@ -28,7 +28,6 @@ or:
 # Do we even need a build-tool..??
 
 * If you're doing it more than once... You should automate it..
-* REMOVE: If you're making a hello world application.. Then no...
 
 # What does it give us?
 * It gives us:
@@ -82,6 +81,9 @@ Negative:
 * IntelliJ webstorm has
 * Terminal get's minimized and forgotten
 	- Growl grunt task for osx.
+* Sublime plugin - https://sublime.wbond.net/packages/Grunt
+* Grunt configs get big... fast...
+	- Er mulig å 
 --
 
 ![Center-aligned image](mind-blown-2.gif)
@@ -93,13 +95,11 @@ Negative:
 --
 
 ### Developer writes some code on his machine
-
---
-
-* 
-* The changed files are validated (jshint/jslint/scsslint/csslint)
-* The changed module/component are concatinated (concat)
-* 
+* The build-system watches the filesystem for changes.
+* When a file changes
+	* The changed files are transpiled (coffeescript -> js, typescript -> js, sass/less -> css)
+	* The changed files are validated (jshint/jslint/scsslint/csslint)
+	* The changed module/component are concatinated (concat)
 * Unit-tests are run with phantom (qunit/jasmine/mocha)
 * Live-reload is triggered (if you're into that sort of thing)
 
