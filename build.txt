@@ -25,30 +25,13 @@ or:
 
 ---
 
-# Do we even need a build-tool..??
-
-* If you're doing it more than once... You should automate it..
-
-# What does it give us?
-* It gives us:
-	* Performance - Network slow
-	* Faster development
-	* Minimize number of bugs in your code as early as possible.
-
----
-
-# Automate all the things
-class: center, middle
-![Center-aligned image](automation.png)
-
----
-
-# Enter Node
-![Center-aligned image](01-node.png)
-* [http://nodejs.org/](http://nodejs.org/)
-
----
-
+- My background is from the microsoft stack.
+	- My perspective on node was something you build server-side application in. Web-api's.
+	- Was using web essentials
+- Why using node..
+	- Why not <insert random language and buildsystem here>?
+	- foreward looking.
+	- build in javascript, by javascript-developers for javascript-developers.
 
 ---
 
@@ -72,6 +55,128 @@ class: center, middle
 * train
 * gear.js
 * mimosa
+
+---
+
+What is node?
+	- Chrome's javascript engine (V8).
+	- Same javascript engine that's in Chrome.
+	- Start up git bash.
+		- 1 + 1 // 2
+		- true + 1 // 2
+		- typeof NaN
+		-----
+		- "foo" + "bar"
+		- NaN === NaN
+		- var i = parseInt("a")
+			- typeof i
+	- Can create scripts to run in node
+	- Create file "hello.js"
+		- var world = "goodbye cruel world";
+		- console.log(world.toUpperCase());
+	- node hello.js
+	- Can build web-applications in node
+	- Can run scripts => tools that other people write. <= We will be here through the presentation..
+
+---
+
+Package manager
+	- Used to download these community-scripts.
+	- Npm and Bower.
+
+---
+
+Task Runners
+	- Lint,
+	- Concat
+	- Transpiling
+		- Coffeescript -> javascript
+		- ES6 -> ES5
+	- Two different task runners
+		- Grunt / Gulp
+---
+
+Generators
+	- How to setup a project quickly.
+---
+
+NPM
+	- Node comes with it's own built-inn package manager.
+	- Very active community.
+		- 80 567 packages and counting...
+	- When installing using this, the libraries lands in one of two places
+		- Locally under the current folder under "node_modules".
+		- Globally accessable from anywhere.
+	- Fetches the dependencies it should download from the package.json
+		- When running npm install
+		- Show package.json
+			- Talk about the different attributes	 
+Bower
+	- Package manager for the client...
+
+---
+
+Grunt
+	- The oldest/more mature than Grunt.
+	- A task-runner
+		- Fetch all the javascript files in this and all sub-directories and concatinate them. -> Results in a new file somewhere on the disk.
+		- Run jslint/jshint on the last task's resulting file. 
+
+Install grunt
+	- npm install grunt-cli -g
+	- npm install grunt -save-dev
+
+---
+
+# What does it give us?
+	- Write in coffescript/typescript -> transpile to javascript
+	- Precompile handlebars-templates for your SPA -> Ember Templates
+	- Make sprites of all your images -> only one image is downloaded.
+	- Sass/less -> css
+	- jshint
+	- optiomizers for require.js
+
+* It gives us:
+	* Performance - Network slow
+	* Faster development
+	* Minimize number of bugs in your code as early as possible.
+
+---
+
+Show it!
+	- Open up sample gruntfile.js
+
+	- grunt.initConfig({})
+		- Here we specify the config variables for the different tasks.
+	- grunt.loadNpmTasks('grunt-contrib-uglify');
+		- Here we load the task-library 'grunt-contrib-uglify' from disk
+	- grunt.registerTask('test', ['jshint', 'qunit']);
+		- Here we make a new task called 'test' containing a sequence of tasks to run when called.
+
+	- qunit -> unit-testing library from the jquery people
+		- phantomjs
+
+---
+
+
+
+---
+
+# Do we even need a build-tool..??
+
+* If you're doing it more than once... You should automate it..
+
+---
+
+# Automate all the things
+class: center, middle
+![Center-aligned image](automation.png)
+
+---
+
+# Enter Node
+![Center-aligned image](01-node.png)
+* [http://nodejs.org/](http://nodejs.org/)
 
 ---
 
