@@ -13,7 +13,9 @@ or:
 ---
 
 # Agenda
+
 * Do we even need a build-tool?
+* What does it give me?
 * Node as a build-tool
 * Some different tools
 * How to use those tools efficiently to speed your development-cycle.
@@ -23,14 +25,22 @@ or:
 
 ---
 
-# Do we even need a build system..??
+# Do we even need a build-tool..??
 
 * If you're doing it more than once... You should automate it..
 * REMOVE: If you're making a hello world application.. Then no...
-* It gives you:
+
+# What does it give us?
+* It gives us:
 	* Performance - Network slow
 	* Faster development
 	* Minimize number of bugs in your code as early as possible.
+
+---
+
+# Automate all the things
+class: center, middle
+![Center-aligned image](automation.png)
 
 ---
 
@@ -40,9 +50,6 @@ or:
 
 ---
 
-# Automate all the things
-class: center, middle
-![Center-aligned image](automation.png)
 
 ---
 
@@ -67,7 +74,14 @@ class: center, middle
 * gear.js
 * mimosa
 
+---
 
+Negative:
+* It is not integrated out of the box with most IDE's.
+* Visual studio has added support for grunt.
+* IntelliJ webstorm has
+* Terminal get's minimized and forgotten
+	- Growl grunt task for osx.
 --
 
 ![Center-aligned image](mind-blown-2.gif)
