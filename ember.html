@@ -11,7 +11,25 @@ Quick intro to ember:
 -----
 * Javascript MVC framework
 * More productive out of the box
-* Get's 
+* A very opinionated framework
+	- Naming conventions:
+		- User route -> looks for UserController, UserView, User template.
+* Requires very little code to get up and running.
+* URL driven router -> statemanager
+
+* Automatic stubbing of controllers/views/routes if you don't create them.
+
+
+-----
+
+Ember core consepts
+
+----
+
+One Ember.Router
+* Takes the url and sets up the apropriate
+
+-----
 
 Big data
 	- OData
@@ -31,6 +49,9 @@ Big codebase
 	- Do everything need to be a spa?
 - idiomatic.js
 	- Have coding standards, preferably enforced by jshint.
+- Minify code and split into chunks based on what users normally do
+	- CDN javascript.
+		- Azure CRN.
 
 Complex views
 - Chrome inspector is your friend (also Ember Inspector)
@@ -68,6 +89,9 @@ Test test test test..... *whispers* test...
 	- https://github.com/gotwarlost/istanbul
 	- https://github.com/marmelab/gremlins.js
 	- testem
+	- grunt-phantomas
+		- Can test how well your site loads over time
+			- http://stefanjudis.github.io/grunt-phantomas/gruntjs/
 
 
 Ember pros
@@ -92,8 +116,6 @@ Ember's router.
 		#- Allows nesting n-deep routes while preserving state in each layer.
 		#	- together with {{link-to}}
 	- Url driven approach.
-
-Automatic stubbing of controllers/views/routes if you don't create them.
 
 -----
 

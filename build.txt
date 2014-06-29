@@ -25,6 +25,14 @@ or:
 
 ---
 
+
+- Chosing a build tool
+
+	- Why not visual studio ( zoidberg )....
+		- A couple of gigs of ram just to run.
+
+----
+
 - My background is from the microsoft stack.
 	- My perspective on node was something you build server-side application in. Web-api's.
 	- Was using web essentials
@@ -58,6 +66,34 @@ or:
 
 ---
 
+Installing node
+
+--
+OSX
+Fink
+- fink install nodejs
+HomeBrew
+- brew install node
+macports
+- port install nodejs
+.... Or just use the binary installer from the website.
+
+Windows
+--
+Chocolatey only node
+- cinst nodejs
+Chocolatey node with npm
+- cinst nodejs.install
+Using scoop
+- scoop install nodejs
+.... Or just use the binary installer from the website.
+
+Linux/BSD/Unix
+--
+You guys know what to do....
+
+---
+
 What is node?
 	- Chrome's javascript engine (V8).
 	- Same javascript engine that's in Chrome.
@@ -65,6 +101,7 @@ What is node?
 		- 1 + 1 // 2
 		- true + 1 // 2
 		- typeof NaN
+		- "tototo".toUpperCase()
 		-----
 		- "foo" + "bar"
 		- NaN === NaN
@@ -94,10 +131,12 @@ Task Runners
 		- ES6 -> ES5
 	- Two different task runners
 		- Grunt / Gulp
+
 ---
 
 Generators
 	- How to setup a project quickly.
+
 ---
 
 NPM
@@ -110,7 +149,7 @@ NPM
 	- Fetches the dependencies it should download from the package.json
 		- When running npm install
 		- Show package.json
-			- Talk about the different attributes	 
+			- Talk about the different attributes
 Bower
 	- Package manager for the client...
 
@@ -158,8 +197,49 @@ Show it!
 
 ---
 
+Advantages to grunt:
 
+- 3106 plugins registered at the grunt website.
+	- Angular-templates
+		- Concatinates all the templates and adds them to the angular $templateCache.
+	- Typescript -> Javascript
+	- If you can spell it.. It's there..
 
+	- Show grunt-devtools
+		- npm install grunt-devtools
+
+---
+
+Downsides to grunt:
+- Big grunt files!
+	- Disorganized.....
+- Slow
+	- Much disk IO
+
+---
+
+Gulp
+
+---
+
+Install gulp
+
+npm install -g gulp
+npm install gulp
+
+---
+
+Pretty easy to understand
+	- Almost has no documentation, betcause it doesn't need one...
+
+605 plugins
+	- has the most important onces...
+
+Where in Grunt we wrote config objects, in Gulp, we write javascript functions.
+- Can use globbing patterns as in grunt.
+
+Show process stream grunt vs gulp.
+- Gulp uses streams.
 ---
 
 # Do we even need a build-tool..??
@@ -195,18 +275,35 @@ Negative:
 
 ---
 
-# Close to ideal development
+# Close to ideal development-cycle
 
 --
 
 ### Developer writes some code on his machine
 * The build-system watches the filesystem for changes.
 * When a file changes
-	* The changed files are transpiled (coffeescript -> js, typescript -> js, sass/less -> css)
+* The changed files are transpiled (coffeescript -> js, typescript -> js, sass (ruby/libsass) / less -> css), ES6 -> ES5
 	* The changed files are validated (jshint/jslint/scsslint/csslint)
 	* The changed module/component are concatinated (concat)
-* Unit-tests are run with phantom (qunit/jasmine/mocha)
-* Live-reload is triggered (if you're into that sort of thing)
+	* New assets are minified imgmin, htmlmin
+	* Unit-tests are run with phantom (qunit/jasmine/mocha)
+	* Istanbul computes the test coverage for the unit-tests
+	* Live-reload is triggered (if you're into that sort of thing)
+* If the tests failed
+	* Growl is used to notify the developer
+
+### Developer checks in code into source control / sends a pull-request
+* The build server:
+	* Same as above with all the files..
+	* Runs selenium-/protractor-/casperjs-tests on the code in one (phantomjs) or more browsers with mock api-calls.
+	* Istanbul is used again for the "integration" tests.
+* If anything fails, the commit/pull-request is tagged with the error information.
+* Notification is sendt to hipchat / slack / kandan
+
+### Once a day
+	* The build server runs the selenium-tests with real data for e2e tests.
+		* Fetches the data from Microsoft Test Suite.
+	* Reports by email if it fails
 
 --
 
@@ -232,6 +329,10 @@ var square = (x) => {
   return x * x;
 };
 
-var square2 = x => x * x;
+var square2 = (x) => x * x;
 
 ```
+---
+
+Should take a look at the node tools
+- More productive
